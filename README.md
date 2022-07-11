@@ -20,7 +20,7 @@ GET /ip-records?value=1.2.3.4
 * spring boot test
 * open api validator for tests
 
-## Running the application
+## Running the application (requires Java 17 in PATH - running in docker recommended)
 
 * './gradlew clean' - cleans the output/build directories
 * './gradlew build' - compiles the code
