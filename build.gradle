@@ -8,6 +8,7 @@ plugins {
 group = 'dev.jdsoft'
 version = '1.0.0'
 sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
@@ -17,6 +18,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation "com.atlassian.oai:swagger-request-validator-mockmvc:2.28.0"
 }
 
 tasks.named('test') {
@@ -26,5 +28,8 @@ tasks.named('test') {
 jib {
     from {
         image = "eclipse-temurin:17-jre-alpine"
+    }
+    to {
+        image = "dev.jdsoft.intel-471-task"
     }
 }
